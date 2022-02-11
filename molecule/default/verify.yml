@@ -8,17 +8,3 @@
   - name: Example assertion
     assert:
       that: true
-
-- name: Verify
-  hosts: all
-  gather_facts: false
-  tasks:
-  - name: Check that a page returns a status 200 and fail if the word AWESOME is not in the page contents
-    uri:
-      url: http://localhost:5601
-      return_content: yes
-    register: res
-
-  - name: Verif
-    debug:
-      msg: "{{ res }}"
